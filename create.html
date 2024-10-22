@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account - Swipe In</title>
+    <link rel="stylesheet" href="create.css">
+    <link rel="icon" type="image/png" href="C:\Users\aades\Downloads\s1.png">
+</head>
+<body>
+    <header>
+        <h1>Swipe In</h1>
+    </header>
+
+    <main>
+        <section id="create-account">
+            <h2>Create an Account</h2>
+            <form id="accountForm" onsubmit="return createAccount(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" required minlength="6">
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required minlength="6">
+                
+                <button type="submit">Create Account</button>
+            </form>
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Swipe In. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createAccount(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const message = document.getElementById('message');
+
+            // Validate passwords
+            if (password !== confirmPassword) {
+                message.textContent = "Passwords do not match.";
+                message.style.color = "red";
+                return false;
+            }
+
+            // Simulate account creation
+            message.textContent = `Account for ${username} created successfully!`;
+            message.style.color = "green";
+            document.getElementById('accountForm').reset(); // Reset form
+            
+            // Here you can add code to send the data to a server using fetch or XMLHttpRequest
+            
+            return true; // Allow form submission if needed
+        }
+    </script>
+</body>
+</html>

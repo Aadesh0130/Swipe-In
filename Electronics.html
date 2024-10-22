@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe In - Products</title>
+    <link rel="stylesheet" href="Electronics.css">
+    <link rel="icon" type="image/png" href="C:\Users\aades\Downloads\s1.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Swipe In Products</h1>
+        <div class="filters">
+            <button class="filter-toggle">Filters</button>
+            <div class="filter-dropdown">
+                <div class="filter-group">
+                    <h3>Price</h3>
+                    <label><input type="checkbox" value="under-100"> Under 100 Rs</label><br>
+                    <label><input type="checkbox" value="100-250"> 100Rs - 250Rs</label><br>
+                    <label><input type="checkbox" value="250-500"> 250Rs - 500Rs</label><br>
+                    <label><input type="checkbox" value="above-500"> Above 500Rs</label>
+                </div>
+                <div class="filter-group">
+                    <h3>Color</h3>
+                    <label><input type="checkbox" value="red"> Red</label><br>
+                    <label><input type="checkbox" value="blue"> Blue</label><br>
+                    <label><input type="checkbox" value="green"> Green</label><br>
+                    <label><input type="checkbox" value="black"> Black</label>
+                </div>
+                <div class="filter-group">
+                    <h3>Size</h3>
+                    <label><input type="checkbox" value="small"> Small</label><br>
+                    <label><input type="checkbox" value="medium"> Medium</label><br>
+                    <label><input type="checkbox" value="large"> Large</label><br>
+                    <label><input type="checkbox" value="x-large"> Extra Large</label>
+                </div>
+                <button class="apply-filters">Apply</button>
+            </div>
+        </div>
+        <div class="product-list">
+            <!-- Product items will be dynamically inserted here -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productContainer = document.querySelector('.product-list');
+
+            const products = Array.from({ length: 6 }, (_, index) => `
+                <div class="product" data-price="${(index % 50) + 10}" data-color="${['red', 'blue', 'green', 'black'][index % 4]}" data-size="${['small', 'medium', 'large', 'x-large'][index % 4]}">
+                    <image src="https://m.media-amazon.com/images/I/31Sm7rY5XxL._SY445_SX342_QL70_FMwebp_.jpg" alt="IPHONE ${index + 11}"></image>
+                    <div class="product-details">
+                        <h2 class="product-name">I-Phone ${index + 11} (4GB RAM and 128GB Storage)</h2><br>
+                        <p class="product-price">&#8377 ${(index % 50)*1000 + 11999}.00 Only</p><br>
+                        <p class="product-description">Oppo Nova Gen ${index + 4} has 128GB Storage and 4GB RAM.</p>
+                    </div>
+                </div>
+            `).join('');
+
+            productContainer.innerHTML = products;
+        });
+
+        const filterToggle = document.querySelector('.filter-toggle');
+        const filterDropdown = document.querySelector('.filter-dropdown');
+        const applyFiltersButton = document.querySelector('.apply-filters');
+
+        filterToggle.addEventListener('click', () => {
+            filterDropdown.classList.toggle('active');
+        });
+
+        applyFiltersButton.addEventListener('click', () => {
+            const products = document.querySelectorAll('.product');
+            const selectedPrices = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+                .filter(checkbox => checkbox.checked && checkbox.value.startsWith('under-'))
+                .map(checkbox => checkbox.value);
+
+            products.forEach(product => {
+                const price = parseFloat(product.getAttribute('data-price'));
+                const shouldDisplay = selectedPrices.some(value => {
+                    switch (value) {
+                        case 'under-100': return price < 100;
+                        case '100-250': return price >= 100 && price <= 250;
+                        case '250-500': return price > 250 && price <= 500;
+                        case 'above-500': return price > 500;
+                        default: return true;
+                    }
+                });
+                product.style.display = shouldDisplay ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

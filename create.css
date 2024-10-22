@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #834;
+}
+
+header {
+    background-color: #6e4f1694;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#create-account {
+    max-width: 400px;
+    margin: auto;
+    background-color: rgb(139, 138, 138);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #753205;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #255b63;
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+}
+footer {
+    background-color: #0c4bc062;
+    padding: 5px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe In Log-In Box </title>
+    <link rel="stylesheet" href="Aadesh.css">
+    <link rel="icon" type="image/png" href="C:\Users\aades\Downloads\s1.png">
+    <script>
+        function rama(){
+                window.location.href = "home.html";
+
+            }        
+    </script>
+</head>
+<body><center>
+    <div class="container">
+        <div class="left_partition">
+            <a href="https://www.Swipe-In.com"><h1>Swipe In</h1></a>
+            <p>Just <u><span>Swipe In</span></u> What You Want</p>
+        </div>
+        <div class="right_partition">
+            <form method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" placeholder="Enter Your Name Here" required><br>
+                <label for="email">Email ID:</label>
+                <input type="email" name="email" placeholder="Enter Your Email ID here" required><br>
+                <label for="Phone">Phone Number:</label>
+                <input type="tel" name="Phone" placeholder="Enter Phone Number Here" required><br>
+                <label for="option">Choose Type Of User:</label>
+                <select name="option" id="option" required>
+                    <option value="Select">Select any one option</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Merchant">Merchant</option>
+                </select><br>
+                <button type="submit" class="Log-In" onclick="rama()">Log-In</button>
+                <p>Or Don't Have an Account? <a href="create.html">Create an Account</a>
+                </p>
+            </form>
+        </div>
+    </div></center>
+</body>
+</html>

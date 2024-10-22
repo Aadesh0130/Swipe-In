@@ -1,0 +1,178 @@
+body {
+    background-color: #bebb92;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #83451b;
+    color: #dac1bf;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: dashed;
+    color: #e64a19;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+.logo img {
+    height: 30px;
+    margin-right: 5px
+}
+.logo p{
+    font-weight: bolder;
+    color: #dac1bf;
+    font-size: 26px;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style-type: none;
+    color: #dac1bf;
+}
+
+.nav-bar ul li {
+    margin-left: 20px;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.nav-bar ul li a:hover {
+    text-decoration: underline;
+    color: blue;
+    background-color: powderblue;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #e64a19;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+}
+
+/* Categories Section */
+.categories {
+    margin-bottom: 40px;
+}
+
+.categories h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.category-items {
+    display: flex;
+    gap: 15px;
+    font-weight: bolder;
+}
+
+.category-item {
+    background-color: white;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Deals Section */
+.deals h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.deals-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.deal-item {
+    background-color: white;
+    padding: 22px 40px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bolder;
+}
+
+/* Featured Products Section */
+.featured-products h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.product-item {
+    background-color: white;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section */
+footer {
+    background-color: #2874f0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
